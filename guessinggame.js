@@ -3,11 +3,11 @@ var randomNumber = Math.floor(Math.random() * 100) + 1;
 // Alustetaan arvausten määrä 0:aan
 var guesses = 0;
 
-
+// Funktio joka tarkistaa käyttäjän arvauksen
 function checkGuess() {
-
+    // Haetaan käyttäjän arvaus syötekentästä
     var guess = document.getElementById("guess").value;
-
+    // Vertaillaan käyttäjän arvausta oikeaan vastaukseen
     if (guess == randomNumber) {
         // Jos arvaus on oikein, näytetään onnitteluviesti ja arvausten määrä
         document.getElementById("message").innerHTML = "Congratulations! you guessed the number in" + guesses + " guesses.";

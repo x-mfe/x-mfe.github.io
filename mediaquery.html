@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Responsiivinen suunnittelu media query -määrityksillä</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .custom-div {
+      text-align: center;
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    p {
+      font-size: 16px;
+      transition: font-size 0.5s ease-in-out;
+    }
+
+    @media only screen and (min-width: 320px) {
+      p {
+        font-size: 14px;
+      }
+    }
+
+    @media only screen and (min-width: 780px) {
+      p {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="custom-div">
+    <h1>Teksti koon mukaan responsiivisesti</h1>
+    <p>Tämä on esimerkki tekstin responsiivisesta muutoksesta näytön koon mukaan.</p>
+    <p>Tekstikoko muuttuu pehmeästi fonttikoon animaation avulla.</p>
+  </div>
+</body>
+</html>

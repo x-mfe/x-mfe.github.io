@@ -16,15 +16,29 @@
     <p>Lorem ipsum dolor sit amet.</p>
 
 
-    <button onclick="avaa">Avaa</button>
+      <button onclick="naytaSyotekentta()">Avaa syötekenttä</button>
 
+    <div id="syotekentta-container" style="display: none;">
+      <input type="text" id="syotekentta">
+      <button onclick="tallennaSyote()">Tallenna</button>
+    </div>
+ 
     <script>
-        function avaa() {
-            
-        }
+        function naytaSyotekentta() {
+  var syotekenttaContainer = document.getElementById("syotekentta-container");
+  syotekenttaContainer.style.display = "block";
+}
 
+function tallennaSyote() {
+  var syote = document.getElementById("syotekentta").value;
+  // Tee jotain syötteen kanssa, esim. tallenna se tietokantaan tai näytä se käyttäjälle
+  console.log("Syöte: " + syote);
+
+  // Piilota syötekenttä uudelleen
+  var syotekenttaContainer = document.getElementById("syotekentta-container");
+  syotekenttaContainer.style.display = "none";
+}
     </script>
-
 
 </body>
 

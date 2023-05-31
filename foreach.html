@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>forEach() </title>
+  </head>
+  <body>
+    <h1>forEach() loop hommeli</h1>
+    <ul id="list"></ul>
+    <script>
+
+      const fruits = ["appelsiini", "banaani", "greippi"];
+
+      const list = document.getElementById("list");
+      fruits.forEach(function(fruit) {
+        const li = document.createElement("li");
+        li.textContent = fruit;
+        list.appendChild(li);
+      });
+    </script>
+  </body>
+</html>

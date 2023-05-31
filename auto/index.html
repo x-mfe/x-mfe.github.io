@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+
+<body>
+   <script>
+    // Car-luokka
+function Car(merkki, hevosvoimat, malli, valmistajanOsoite) {
+  this.merkki = merkki;
+  this.hevosvoimat = hevosvoimat;
+  this.malli = malli;
+  this.valmistajanOsoite = valmistajanOsoite;
+}
+
+// Metodi, joka tulostaa auton tiedot
+Car.prototype.tulostaTiedot = function() {
+  return "Merkki: " + this.merkki + "\n" +
+         "Hevosvoimat: " + this.hevosvoimat + "\n" +
+         "Malli: " + this.malli + "\n" +
+         "Valmistajan www-osoite: " + this.valmistajanOsoite + "\n";
+};
+
+// Luodaan Car-objektit
+var car1 = new Car("Toyota", 150, "Corolla", "www.toyota.com");
+var car2 = new Car("BMW", 200, "X5", "www.bmw.com");
+var car3 = new Car("Ford", 120, "Focus", "www.ford.com");
+
+// Tulostetaan auton tiedot konsoliin
+console.log(car1.tulostaTiedot());
+console.log(car2.tulostaTiedot());
+console.log(car3.tulostaTiedot());
+
+   </script>
+
+</html>

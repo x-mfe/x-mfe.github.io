@@ -42,3 +42,9 @@ li {
     border-radius: 10px;
     cursor: crosshair;
 }
+.shake {
+    animation: shake 0.1s;
+}
+.pop {
+    animation: pop 0.5s;
+}

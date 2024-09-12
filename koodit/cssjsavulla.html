@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Change Background Color</title>
+</head>
+<body>
+  <h1>Change Background Color</h1>
+  <label for="colorInput">Enter a color:</label>
+  <input type="text" id="colorInput">
+  <button id="changeColorBtn">Change Color</button>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var changeColorBtn = document.getElementById("changeColorBtn");
+
+      changeColorBtn.addEventListener("click", function() {
+        var colorInput = document.getElementById("colorInput").value;
+        document.body.style.backgroundColor = colorInput;
+        document.body.style.color = getContrastColor(colorInput);
+      });
+
+      function getContrastColor(hexColor) {
+        // Muunnetaan kuusinumeroinen heksadesimaaliluku RGB-arvoiksi
+        var r = parseInt(hexColor.substr(1, 2), 16);
+        var g = parseInt(hexColor.substr(3, 2), 16);
+        var b = parseInt(hexColor.substr(5, 2), 16);
+
+        // Lasketaan kontrastiväri valitun taustavärin perusteella
+        var luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+        return (luminance > 0.5) ? "#000000" : "#ffffff"; // Musta tai valkoinen
+      }
+    });
+  </script>
+</body>
+</html>

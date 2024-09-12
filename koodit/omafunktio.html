@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function omaFunktio(numero) {
+      // Tämä funktio laskee parametrina annetun numeron neliön
+      var tulos = numero * numero;
+      return tulos;
+    }
+  </script>
+</head>
+<body>
+  <h1>Oma Funktio</h1>
+  <p>Tämä on yksinkertainen funktio, joka laskee annetun numeron neliön.</p>
+  
+  <h2>Käyttö:</h2>
+  <p>Syötä haluamasi numero ja klikkaa "Laske" -painiketta.</p>
+  <input type="number" id="numero">
+  <button onclick="laskeNelio()">Laske</button>
+  
+  <h2>Tulos:</h2>
+  <p id="tulos"></p>
+  
+  <script>
+    function laskeNelio() {
+      var syote = document.getElementById("numero").value;
+      var tulos = omaFunktio(syote);
+      document.getElementById("tulos").innerHTML = "Neliö: " + tulos;
+    }
+  </script>
+</body>
+</html>
+
+</body>
+</html>

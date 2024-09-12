@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Laskenta</title>
+  <script>
+    // Määritellään Laskenta-luokka
+    class Laskenta {
+      // Konstruktori ottaa vastaan muuttujat ja asettaa ne luokan ominaisuuksiksi
+      constructor(muuttuja1, muuttuja2) {
+        this.muuttuja1 = muuttuja1;
+        this.muuttuja2 = muuttuja2;
+      }
+
+      // LaskeSumma-funktio laskee muuttujien summan ja palauttaa sen
+      laskeSumma() {
+        return this.muuttuja1 + this.muuttuja2;
+      }
+    }
+
+    // Funktio laskeJaNaytaTulos kutsutaan, kun käyttäjä painaa "Laske summa" -nappia
+    function laskeJaNaytaTulos() {
+      // Haetaan käyttäjän syötteet syötekentistä
+      var syote1 = parseFloat(document.getElementById("syote1").value);
+      var syote2 = parseFloat(document.getElementById("syote2").value);
+
+      // Luodaan uusi Laskenta-olio ja annetaan syötteet konstruktorille
+      var laskenta = new Laskenta(syote1, syote2);
+
+      // Kutsutaan laskeSumma-funktiota ja tallennetaan tulos muuttujaan
+      var tulos = laskenta.laskeSumma();
+
+      // Näytetään tulos HTML-sivulla päivittämällä p-elementin sisältö
+      document.getElementById("tulos").textContent = "Summa: " + tulos;
+    }
+  </script>
+</head>
+<body>
+  <h1>Laskenta</h1>
+  <!-- Syötekentät, joihin käyttäjä voi syöttää luvut -->
+  <input type="number" id="syote1" placeholder="Syötä luku 1" />
+  <input type="number" id="syote2" placeholder="Syötä luku 2" />
+
+  <!-- "Laske summa" -nappi, joka kutsuu laskeJaNaytaTulos-funktiota -->
+  <button onclick="laskeJaNaytaTulos()">Laske summa</button>
+
+  <!-- P-elementti, johon tuloksen näytetään -->
+  <p id="tulos"></p>
+</body>
+</html>
